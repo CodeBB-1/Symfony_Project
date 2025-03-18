@@ -1,0 +1,7 @@
+<div class="formclass">
+{{ form_start(form, {'attr': {'class': 'btn btn-dark'}}) }}
+    {{ form_widget(form) }}
+    <br>
+    <button class=" cardColor btn btn-light">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}
+</div>

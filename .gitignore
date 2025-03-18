@@ -1,0 +1,52 @@
+
+###> symfony/framework-bundle ###
+/.env.local
+/.env.local.php
+/.env.*.local
+/config/secrets/prod/prod.decrypt.private.php
+/public/bundles/
+/var/
+/vendor/
+/.env
+/.env.local
+/.env.dev
+/.env.test
+/.env.prod
+/.env*
+!/.env.example
+/config/packages/doctrine.yaml
+/config/packages/security.yaml
+/*.pem
+/*.key
+/*.crt
+/var/cache/*
+/var/log/*
+/var/sessions/*
+/auth.json
+/.idea/
+/.vscode/
+*.sublime-workspace
+*.sublime-project
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+###< symfony/framework-bundle ###
+
+###> phpunit/phpunit ###
+/phpunit.xml
+.phpunit.result.cache
+###< phpunit/phpunit ###
+
+###> symfony/phpunit-bridge ###
+.phpunit.result.cache
+/phpunit.xml
+###< symfony/phpunit-bridge ###
+
+###> symfony/asset-mapper ###
+/public/assets/
+/assets/vendor/
+###< symfony/asset-mapper ###

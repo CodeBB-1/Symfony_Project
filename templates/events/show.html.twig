@@ -1,0 +1,109 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('details.css') }}">
+{% endblock %}
+
+{% block title %}Events{% endblock %}
+
+{% block body %}
+    <h1 class="text-center">{{ event.name }}</h1>
+
+    {# <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ event.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ event.name }}</td>
+            </tr>
+            <tr>
+                <th>EventDateTime</th>
+                <td>{{ event.eventDateTime ? event.eventDateTime|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ event.description }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ event.image }}</td>
+            </tr>
+            <tr>
+                <th>Capacity</th>
+                <td>{{ event.capacity }}</td>
+            </tr>
+            <tr>
+                <th>Contact_email</th>
+                <td>{{ event.contactEmail }}</td>
+            </tr>
+            <tr>
+                <th>Contact_phone_number</th>
+                <td>{{ event.contactPhoneNumber }}</td>
+            </tr>
+            <tr>
+                <th>Adress</th>
+                <td>{{ event.adress }}</td>
+            </tr>
+            <tr>
+                <th>Event_URL</th>
+                <td>{{ event.eventURL }}</td>
+            </tr>
+            <tr>
+                <th>EventType</th>
+                <td>{{ event.eventType }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_events_index') }}">back to list</a>
+
+    <a href="{{ path('app_events_edit', {'id': event.id}) }}">edit</a>
+
+    {{ include('events/_delete_form.html.twig') }} #}
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="project-info-box mt-0 ">
+                <h5>EVENT DETAILS</h5>
+                <p class="mb-0">{{ event.description }}</p>
+            </div><!-- / project-info-box -->
+
+            <div class="project-info-box">
+                <p><b>Adress:</b> {{ event.adress }}</p>
+                <p><b>Date:</b> {{ event.eventDateTime ? event.eventDateTime|date('Y-m-d H:i:s') : '' }}</p>
+                <p><b>Capacity:</b> {{ event.capacity }}</p>
+                <p><b>Phone Number:</b> {{ event.contactPhoneNumber }}</p>
+                <p class="mb-0"><b>Type:</b>{{ event.eventType }}</p>
+            </div><!-- / project-info-box -->
+
+            <div class="project-info-box mt-0 mb-0">
+                <p class="mb-0">
+                    <span class="fw-bold mr-10 va-middle hide-mobile">Buy now: 
+                        <a href="https://www.viennacitycard.at/en/">https://www.viennacitycard.at/en/</a>
+                  
+            </div>
+        </div>
+
+        <div class="col-md-7">
+            <img src="{{ event.image }}" alt="project-image" class="rounded">
+            <div class="project-info-box">
+                <p><b>Email:</b> <a href="">{{ event.contactEmail }}</a></p>
+                <p><b>URL:</b> <a href="">{{ event.eventURL }}</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<div class="text-center">
+    <a class="btn btn-dark fs-3" href="{{ path('app_events_index') }}">Back to Events</a>
+    <a class="btn btn-dark fs-3" href="{{ path('app_events_edit', {'id': event.id}) }}">Update event</a>
+</div>
+<div class="text-center">
+    {{ include('events/_delete_form.html.twig') }}
+</div>
+{% endblock %}
